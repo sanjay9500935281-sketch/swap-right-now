@@ -1,0 +1,185 @@
+// SwapSkills aptitude question bank
+// Structure: QUESTIONS.<category> = { <topic>: [ {q, options:[4], answer:index}, ... ] }
+// Categories: engineering, arts, languages
+const QUESTIONS = {
+  engineering: {
+    "Quantitative Aptitude": [
+      { q: "A train 150m long crosses a pole in 15 seconds. What is its speed?", options: ["10 m/s", "15 m/s", "36 km/h", "8 m/s"], answer: 0 },
+      { q: "If the cost price of an item is ₹80 and it is sold for ₹100, what is the profit percentage?", options: ["20%", "25%", "15%", "30%"], answer: 1 },
+      { q: "What is the compound interest on ₹10,000 at 10% per annum for 2 years?", options: ["₹2,000", "₹2,100", "₹1,000", "₹2,500"], answer: 1 },
+      { q: "A can complete a job in 10 days, B in 15 days. Working together, how many days will they take?", options: ["5 days", "6 days", "8 days", "12 days"], answer: 1 },
+      { q: "The average of 5 numbers is 20. If one number is removed, the average becomes 18. What was the removed number?", options: ["24", "28", "26", "30"], answer: 1 },
+      { q: "Two pipes fill a tank in 20 and 30 minutes respectively. How long will both take together?", options: ["10 min", "12 min", "15 min", "25 min"], answer: 1 },
+      { q: "What is 15% of 240?", options: ["30", "36", "42", "24"], answer: 1 },
+      { q: "A sum of money doubles itself in 8 years at simple interest. Find the rate of interest.", options: ["10%", "12.5%", "8%", "15%"], answer: 1 },
+      { q: "If a car covers 180 km in 3 hours, what is its speed?", options: ["45 km/h", "50 km/h", "60 km/h", "55 km/h"], answer: 2 },
+      { q: "The ratio of two numbers is 3:5 and their sum is 40. Find the larger number.", options: ["15", "20", "25", "30"], answer: 2 },
+      { q: "A shopkeeper marks up an item by 40% and gives a 10% discount. What is his overall profit percentage?", options: ["26%", "30%", "24%", "20%"], answer: 0 },
+      { q: "How many ways can 3 people be seated in a row?", options: ["3", "6", "9", "12"], answer: 1 },
+      { q: "What is the next number in the series: 2, 6, 12, 20, 30, ?", options: ["36", "40", "42", "38"], answer: 2 },
+      { q: "If x + y = 10 and x - y = 4, what is the value of x?", options: ["5", "6", "7", "8"], answer: 2 },
+      { q: "A person walks 8 km north, then 6 km east. How far is he from the starting point?", options: ["10 km", "14 km", "12 km", "9 km"], answer: 0 }
+    ],
+    "Logical Reasoning": [
+      { q: "Find the odd one out: Triangle, Square, Circle, Length", options: ["Triangle", "Square", "Circle", "Length"], answer: 3 },
+      { q: "If CAT is coded as 24-2-21, how is DOG coded (A=1, B=2...)?", options: ["4-16-7", "4-15-7", "5-15-8", "4-14-7"], answer: 1 },
+      { q: "Complete the series: A, C, F, J, O, ?", options: ["S", "T", "U", "V"], answer: 2 },
+      { q: "All roses are flowers. Some flowers fade quickly. Which conclusion is valid?", options: ["All roses fade quickly", "Some roses may fade quickly", "No roses fade quickly", "All flowers are roses"], answer: 1 },
+      { q: "If today is Wednesday, what day will it be after 65 days?", options: ["Tuesday", "Wednesday", "Thursday", "Monday"], answer: 0 },
+      { q: "Pointing to a photo, Raj said, 'She is the daughter of my grandfather's only son.' Who is she to Raj?", options: ["Mother", "Sister", "Cousin", "Aunt"], answer: 1 },
+      { q: "Find the missing number: 3, 9, 27, 81, ?", options: ["162", "243", "324", "729"], answer: 1 },
+      { q: "In a certain code, MOUSE is written as NPVTF. How is CHAIR written?", options: ["DIBJS", "DIBJT", "DJBIS", "DIBIS"], answer: 0 },
+      { q: "Which figure completes the pattern — a square always followed by a triangle, in this list: square, triangle, square, triangle, square, ?", options: ["Square", "Triangle", "Circle", "Pentagon"], answer: 1 },
+      { q: "If FRIEND is coded as HTKGPF, how is CANDLE coded?", options: ["ECPFNG", "EDPFNG", "ECPFMG", "ECOFNG"], answer: 0 },
+      { q: "A is taller than B, C is shorter than A but taller than B. Who is the tallest?", options: ["A", "B", "C", "Cannot be determined"], answer: 0 },
+      { q: "Which number should replace the question mark: 5, 11, 23, 47, ?", options: ["94", "95", "96", "97"], answer: 1 },
+      { q: "Statement: All engineers are logical. Ravi is an engineer. Conclusion?", options: ["Ravi may be logical", "Ravi is logical", "Ravi is not logical", "Cannot say"], answer: 1 },
+      { q: "Choose the word that does not belong: Apple, Mango, Carrot, Banana", options: ["Apple", "Mango", "Carrot", "Banana"], answer: 2 },
+      { q: "If South-East becomes North, North-East becomes West, what does South become?", options: ["North-East", "North-West", "South-West", "East"], answer: 1 }
+    ],
+    "CS & Programming Fundamentals": [
+      { q: "What is the time complexity of binary search on a sorted array?", options: ["O(n)", "O(log n)", "O(n log n)", "O(1)"], answer: 1 },
+      { q: "Which data structure uses FIFO (First In First Out) order?", options: ["Stack", "Queue", "Tree", "Graph"], answer: 1 },
+      { q: "In object-oriented programming, what does 'encapsulation' mean?", options: ["Inheriting from a parent class", "Bundling data and methods that operate on it together", "Using the same method name differently", "Creating multiple objects"], answer: 1 },
+      { q: "Which of these is NOT a programming paradigm?", options: ["Object-Oriented", "Functional", "Procedural", "Sequential Only"], answer: 3 },
+      { q: "What does SQL stand for?", options: ["Structured Query Language", "Simple Query Language", "Sequential Query Logic", "Structured Question Language"], answer: 0 },
+      { q: "Which sorting algorithm has the best average time complexity?", options: ["Bubble Sort O(n²)", "Merge Sort O(n log n)", "Selection Sort O(n²)", "Insertion Sort O(n²)"], answer: 1 },
+      { q: "What is the purpose of a primary key in a database table?", options: ["To sort the table", "To uniquely identify each row", "To speed up joins only", "To store passwords"], answer: 1 },
+      { q: "In Python, which keyword is used to define a function?", options: ["func", "def", "function", "define"], answer: 1 },
+      { q: "What does HTTP stand for?", options: ["HyperText Transfer Protocol", "High Transfer Text Protocol", "HyperText Transmission Process", "Home Tool Transfer Protocol"], answer: 0 },
+      { q: "Which of these is a version control system?", options: ["Git", "Docker", "Kubernetes", "Nginx"], answer: 0 },
+      { q: "What is a stack overflow typically caused by?", options: ["Too much RAM", "Infinite or excessive recursion", "Slow internet", "Large screen resolution"], answer: 1 },
+      { q: "In networking, what does IP stand for?", options: ["Internet Protocol", "Internal Process", "Internet Provider", "Information Packet"], answer: 0 },
+      { q: "Which logic gate outputs true only when both inputs are true?", options: ["OR", "AND", "NOT", "XOR"], answer: 1 },
+      { q: "What is the main function of an operating system's scheduler?", options: ["Manage file storage", "Decide which process runs on the CPU next", "Render graphics", "Manage the network"], answer: 1 },
+      { q: "Which of these best describes 'recursion' in programming?", options: ["A loop that never ends", "A function calling itself to solve smaller sub-problems", "A variable that changes type", "A way to sort arrays"], answer: 1 },
+      { q: "What does API stand for?", options: ["Application Programming Interface", "Applied Program Instruction", "Automated Process Integration", "Application Process Interface"], answer: 0 },
+      { q: "Which unit measures the clock speed of a processor?", options: ["Bytes", "Hertz", "Volts", "Bits per pixel"], answer: 1 },
+      { q: "In Boolean algebra, what does NOT(1) equal?", options: ["1", "0", "-1", "Undefined"], answer: 1 },
+      { q: "What is normalization in database design mainly used for?", options: ["Encrypting data", "Reducing data redundancy", "Increasing table size", "Speeding up the CPU"], answer: 1 },
+      { q: "Which of these is a compiled language rather than interpreted?", options: ["Python", "JavaScript", "C++", "PHP"], answer: 2 }
+    ]
+  },
+  arts: {
+    "General Science": [
+      { q: "What is the chemical symbol for Sodium?", options: ["So", "Na", "Sd", "S"], answer: 1 },
+      { q: "Which organ in the human body produces insulin?", options: ["Liver", "Pancreas", "Kidney", "Heart"], answer: 1 },
+      { q: "What is the powerhouse of the cell?", options: ["Nucleus", "Ribosome", "Mitochondria", "Golgi body"], answer: 2 },
+      { q: "Which gas do plants absorb from the atmosphere for photosynthesis?", options: ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"], answer: 2 },
+      { q: "What is the SI unit of electric current?", options: ["Volt", "Watt", "Ampere", "Ohm"], answer: 2 },
+      { q: "Which planet is known as the Red Planet?", options: ["Venus", "Mars", "Jupiter", "Saturn"], answer: 1 },
+      { q: "What is the pH value of pure water?", options: ["5", "7", "9", "0"], answer: 1 },
+      { q: "Which vitamin is produced when skin is exposed to sunlight?", options: ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin K"], answer: 2 },
+      { q: "What type of blood cells fight infection in the human body?", options: ["Red blood cells", "White blood cells", "Platelets", "Plasma cells"], answer: 1 },
+      { q: "Which force keeps planets in orbit around the sun?", options: ["Magnetism", "Gravity", "Friction", "Nuclear force"], answer: 1 },
+      { q: "What is the process by which plants lose water through leaves called?", options: ["Respiration", "Transpiration", "Photosynthesis", "Osmosis"], answer: 1 },
+      { q: "Which metal is liquid at room temperature?", options: ["Iron", "Mercury", "Aluminium", "Copper"], answer: 1 },
+      { q: "What is the largest organ of the human body?", options: ["Liver", "Brain", "Skin", "Lungs"], answer: 2 },
+      { q: "Sound cannot travel through which of these?", options: ["Water", "Air", "Vacuum", "Steel"], answer: 2 },
+      { q: "Which scientist proposed the theory of evolution by natural selection?", options: ["Isaac Newton", "Charles Darwin", "Albert Einstein", "Gregor Mendel"], answer: 1 }
+    ],
+    "History & Civics": [
+      { q: "Who was the first President of independent India?", options: ["Jawaharlal Nehru", "Rajendra Prasad", "Sardar Patel", "B.R. Ambedkar"], answer: 1 },
+      { q: "In which year did India gain independence?", options: ["1945", "1947", "1950", "1930"], answer: 1 },
+      { q: "Who is known as the Father of the Indian Constitution?", options: ["Mahatma Gandhi", "B.R. Ambedkar", "Jawaharlal Nehru", "Sardar Patel"], answer: 1 },
+      { q: "The French Revolution began in which year?", options: ["1789", "1776", "1804", "1815"], answer: 0 },
+      { q: "Which ancient civilization built the pyramids of Giza?", options: ["Mesopotamian", "Egyptian", "Roman", "Greek"], answer: 1 },
+      { q: "Who wrote the Indian national anthem 'Jana Gana Mana'?", options: ["Bankim Chandra Chatterjee", "Rabindranath Tagore", "Sarojini Naidu", "Subhash Chandra Bose"], answer: 1 },
+      { q: "How many fundamental rights are guaranteed by the Indian Constitution?", options: ["5", "6", "7", "8"], answer: 1 },
+      { q: "Who was known as the Iron Man of India?", options: ["Jawaharlal Nehru", "Sardar Vallabhbhai Patel", "Bhagat Singh", "Subhash Chandra Bose"], answer: 1 },
+      { q: "The Quit India Movement was launched in which year?", options: ["1942", "1930", "1920", "1947"], answer: 0 },
+      { q: "Which body of the United Nations is primarily responsible for maintaining peace and security?", options: ["General Assembly", "Security Council", "Economic and Social Council", "Secretariat"], answer: 1 }
+    ],
+    "Geography": [
+      { q: "Which is the longest river in the world?", options: ["Amazon", "Nile", "Ganges", "Yangtze"], answer: 1 },
+      { q: "Which is the largest continent by area?", options: ["Africa", "Asia", "North America", "Europe"], answer: 1 },
+      { q: "Mount Everest is located in which mountain range?", options: ["Andes", "Alps", "Himalayas", "Rockies"], answer: 2 },
+      { q: "Which desert is the largest hot desert in the world?", options: ["Gobi", "Sahara", "Thar", "Kalahari"], answer: 1 },
+      { q: "Which is the smallest country in the world by area?", options: ["Monaco", "Vatican City", "San Marino", "Liechtenstein"], answer: 1 },
+      { q: "Which Indian state has the longest coastline?", options: ["Tamil Nadu", "Gujarat", "Kerala", "Maharashtra"], answer: 1 },
+      { q: "The Great Barrier Reef is located near which country?", options: ["Brazil", "Australia", "Indonesia", "South Africa"], answer: 1 },
+      { q: "Which ocean is the largest by surface area?", options: ["Atlantic", "Indian", "Pacific", "Arctic"], answer: 2 },
+      { q: "Which line of latitude passes through the middle of India?", options: ["Equator", "Tropic of Cancer", "Tropic of Capricorn", "Arctic Circle"], answer: 1 },
+      { q: "Which is the capital city of Australia?", options: ["Sydney", "Melbourne", "Canberra", "Perth"], answer: 2 }
+    ],
+    "Economics & Commerce": [
+      { q: "What does GDP stand for?", options: ["Gross Domestic Product", "General Domestic Price", "Gross Development Plan", "Global Domestic Product"], answer: 0 },
+      { q: "What is inflation?", options: ["A rise in the value of money", "A general rise in prices over time", "A decrease in unemployment", "A type of tax"], answer: 1 },
+      { q: "Which organization regulates monetary policy in India?", options: ["SEBI", "RBI", "NITI Aayog", "IRDAI"], answer: 1 },
+      { q: "What is a 'balance sheet' used for in a business?", options: ["Tracking employee attendance", "Showing assets, liabilities, and equity at a point in time", "Recording daily sales only", "Planning marketing campaigns"], answer: 1 },
+      { q: "What does the term 'monopoly' describe in economics?", options: ["Many sellers competing", "A single seller dominating the market", "Government-controlled prices only", "A free trade agreement"], answer: 1 },
+      { q: "What is the full form of GST in India?", options: ["Goods and Services Tax", "General Sales Tax", "Government Service Tax", "Gross Sales Total"], answer: 0 },
+      { q: "In accounting, what does 'debit' generally represent for an asset account?", options: ["A decrease", "An increase", "No change", "A tax deduction"], answer: 1 },
+      { q: "What is a 'stock' or 'share' in simple terms?", options: ["A loan given to a company", "A unit of ownership in a company", "A type of tax refund", "A government bond"], answer: 1 }
+    ],
+    "General Knowledge": [
+      { q: "Which is the largest mammal in the world?", options: ["African Elephant", "Blue Whale", "Giraffe", "Polar Bear"], answer: 1 },
+      { q: "Who painted the Mona Lisa?", options: ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Michelangelo"], answer: 2 },
+      { q: "Which sport is associated with the term 'Grand Slam'?", options: ["Cricket", "Tennis", "Football", "Hockey"], answer: 1 },
+      { q: "Which metal is used to make electrical wires most commonly?", options: ["Iron", "Copper", "Zinc", "Lead"], answer: 1 },
+      { q: "How many players are on a standard football (soccer) team on the field?", options: ["9", "10", "11", "12"], answer: 2 },
+      { q: "Which instrument is used to measure atmospheric pressure?", options: ["Thermometer", "Barometer", "Hygrometer", "Anemometer"], answer: 1 },
+      { q: "What is the currency of Japan?", options: ["Won", "Yen", "Yuan", "Ringgit"], answer: 1 }
+    ]
+  },
+  languages: {
+    "English Grammar": [
+      { q: "Choose the correct sentence.", options: ["She don't like tea.", "She doesn't like tea.", "She not like tea.", "She isn't likes tea."], answer: 1 },
+      { q: "Identify the correct plural of 'child'.", options: ["Childs", "Childes", "Children", "Childrens"], answer: 2 },
+      { q: "Which sentence is in the passive voice?", options: ["The chef cooked the meal.", "The meal was cooked by the chef.", "The chef is cooking.", "The chef will cook the meal."], answer: 1 },
+      { q: "Choose the correctly punctuated sentence.", options: ["Its a beautiful day.", "It's a beautiful day.", "Its' a beautiful day.", "It is' a beautiful day."], answer: 1 },
+      { q: "'Neither of the boys ___ ready.'  Fill in the blank.", options: ["are", "is", "were", "have been"], answer: 1 },
+      { q: "Which word is an adverb in: 'She sings beautifully.'", options: ["She", "Sings", "Beautifully", "None"], answer: 2 },
+      { q: "Choose the correct past tense of 'go'.", options: ["Goed", "Gone", "Went", "Going"], answer: 2 },
+      { q: "Identify the sentence with correct subject-verb agreement.", options: ["The team are playing well.", "The team is playing well.", "The team play well.", "The team has playing well."], answer: 1 },
+      { q: "Which is a compound sentence?", options: ["I like tea.", "I like tea, but she likes coffee.", "Tea is hot.", "Drinking tea."], answer: 1 },
+      { q: "Choose the correct comparative form: 'This book is ___ than that one.'", options: ["interesting", "more interesting", "most interesting", "interestinger"], answer: 1 },
+      { q: "Which word correctly completes: 'I have been living here ___ 2015.'", options: ["for", "since", "from", "at"], answer: 1 },
+      { q: "Identify the correct sentence.", options: ["He is one of the best player.", "He is one of the best players.", "He is one of best players.", "He are one of the best players."], answer: 1 },
+      { q: "Choose the correctly formed question.", options: ["Where you are going?", "Where are you going?", "Where you going?", "You are going where?"], answer: 1 },
+      { q: "Which sentence uses 'their' correctly?", options: ["They're going to their house.", "Their going to they're house.", "They're going to they're house.", "There going to their house."], answer: 0 },
+      { q: "Identify the correct conditional sentence.", options: ["If it rains, I stay home.", "If it will rain, I will stay home.", "If it rains, I will stay home.", "If it rain, I will stay home."], answer: 2 },
+      { q: "Which is the correct superlative form of 'good'?", options: ["Gooder", "Better", "Best", "Most good"], answer: 2 },
+      { q: "Choose the sentence with correct article usage.", options: ["She is an university student.", "She is a university student.", "She is the university student always.", "She is university student."], answer: 1 },
+      { q: "Identify the correctly spelled word.", options: ["Recieve", "Receive", "Receeve", "Recive"], answer: 1 },
+      { q: "Which sentence correctly uses a semicolon?", options: ["I like tea; she likes coffee.", "I like tea, she likes coffee;", "I; like tea, she likes coffee.", "I like tea she; likes coffee."], answer: 0 },
+      { q: "Choose the correct indirect speech: He said, 'I am tired.'", options: ["He said that he is tired.", "He said that he was tired.", "He says that he was tired.", "He said that I am tired."], answer: 1 }
+    ],
+    "Vocabulary": [
+      { q: "Choose the synonym of 'Happy'.", options: ["Sad", "Joyful", "Angry", "Tired"], answer: 1 },
+      { q: "Choose the antonym of 'Ancient'.", options: ["Old", "Modern", "Historic", "Aged"], answer: 1 },
+      { q: "Choose the synonym of 'Brave'.", options: ["Timid", "Courageous", "Weak", "Careless"], answer: 1 },
+      { q: "Choose the antonym of 'Generous'.", options: ["Kind", "Selfish", "Giving", "Wealthy"], answer: 1 },
+      { q: "Choose the synonym of 'Rapid'.", options: ["Slow", "Quick", "Steady", "Careful"], answer: 1 },
+      { q: "Choose the antonym of 'Transparent'.", options: ["Clear", "Opaque", "Visible", "Bright"], answer: 1 },
+      { q: "Choose the synonym of 'Enormous'.", options: ["Tiny", "Huge", "Average", "Narrow"], answer: 1 },
+      { q: "Choose the antonym of 'Genuine'.", options: ["Real", "Fake", "Honest", "True"], answer: 1 },
+      { q: "Choose the synonym of 'Diligent'.", options: ["Lazy", "Hardworking", "Careless", "Slow"], answer: 1 },
+      { q: "Choose the antonym of 'Optimistic'.", options: ["Hopeful", "Pessimistic", "Cheerful", "Positive"], answer: 1 },
+      { q: "Choose the synonym of 'Assist'.", options: ["Hinder", "Help", "Ignore", "Refuse"], answer: 1 },
+      { q: "Choose the meaning of the idiom 'Break the ice'.", options: ["To cause an argument", "To start a conversation in a social setting", "To end a relationship", "To cool down a room"], answer: 1 },
+      { q: "Choose the meaning of the idiom 'Piece of cake'.", options: ["A dessert item", "Something very easy", "A difficult task", "A small amount"], answer: 1 },
+      { q: "Choose the synonym of 'Reluctant'.", options: ["Willing", "Unwilling", "Eager", "Excited"], answer: 1 },
+      { q: "Choose the correct meaning of 'Benevolent'.", options: ["Cruel", "Kind and generous", "Angry", "Confused"], answer: 1 }
+    ],
+    "Tamil Language Basics": [
+      { q: "தமிழில் 'நன்றி' என்பதன் ஆங்கில பொருள் என்ன?", options: ["Sorry", "Thank you", "Hello", "Please"], answer: 1 },
+      { q: "'புத்தகம்' என்ற சொல்லின் ஆங்கில பொருள் என்ன?", options: ["Pen", "Book", "Table", "Chair"], answer: 1 },
+      { q: "தமிழ் மொழியின் முதல் எழுத்து எது?", options: ["க", "அ", "ங", "இ"], answer: 1 },
+      { q: "'நீர்' என்ற சொல்லின் பொருள் என்ன?", options: ["Fire", "Water", "Air", "Earth"], answer: 1 },
+      { q: "'பள்ளி' என்பதன் ஆங்கில பொருள் என்ன?", options: ["Hospital", "School", "Market", "Temple"], answer: 1 },
+      { q: "தமிழில் எண் '5' என்பதை எவ்வாறு எழுதுவது?", options: ["நான்கு", "ஐந்து", "ஆறு", "மூன்று"], answer: 1 },
+      { q: "'நண்பன்' என்ற சொல்லின் ஆங்கில பொருள்?", options: ["Enemy", "Friend", "Stranger", "Teacher"], answer: 1 },
+      { q: "'காலை வணக்கம்' என்பதன் பொருள் என்ன?", options: ["Good night", "Good morning", "Good evening", "Goodbye"], answer: 1 },
+      { q: "'மரம்' என்ற சொல் எதைக் குறிக்கிறது?", options: ["River", "Tree", "Mountain", "Sky"], answer: 1 },
+      { q: "'குடும்பம்' என்ற சொல்லின் பொருள் என்ன?", options: ["Family", "Friendship", "Village", "Country"], answer: 0 }
+    ],
+    "Hindi Language Basics": [
+      { q: "'धन्यवाद' शब्द का अंग्रेजी अर्थ क्या है?", options: ["Sorry", "Thank you", "Hello", "Please"], answer: 1 },
+      { q: "'पानी' शब्द का अर्थ क्या है?", options: ["Fire", "Water", "Air", "Sun"], answer: 1 },
+      { q: "'विद्यालय' शब्द का अंग्रेजी अर्थ क्या है?", options: ["Hospital", "School", "Market", "Temple"], answer: 1 },
+      { q: "हिन्दी में 'पाँच' का अंक क्या है?", options: ["4", "5", "6", "3"], answer: 1 },
+      { q: "'मित्र' शब्द का अर्थ क्या है?", options: ["Enemy", "Friend", "Teacher", "Stranger"], answer: 1 }
+    ]
+  }
+};
